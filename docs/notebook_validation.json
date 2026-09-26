@@ -1,0 +1,19 @@
+{
+  "notebooks": [
+    {
+      "notebook": "Foundations.ipynb",
+      "fresh_kernel": true,
+      "code_cells": 16,
+      "embedded_figures": 7,
+      "errors": 0
+    },
+    {
+      "notebook": "Finite_Chain_Study.ipynb",
+      "fresh_kernel": true,
+      "code_cells": 15,
+      "embedded_figures": 6,
+      "errors": 0
+    }
+  ],
+  "unchanged_evidence_files": 88
+}

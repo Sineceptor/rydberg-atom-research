@@ -1,0 +1,202 @@
+{
+  "purpose": "Optional same-N shape sensitivity check; not a bulk or geometry-isolated comparison.",
+  "geometry": {
+    "2x2_patch": {
+      "atoms": 12,
+      "open_boundaries": true,
+      "bonds": 17,
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          5,
+          7,
+          9
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ]
+      ],
+      "degree_counts": {
+        "2": 5,
+        "3": 4,
+        "4": 3
+      },
+      "degree_by_atom": [
+        2,
+        3,
+        3,
+        3,
+        2,
+        4,
+        3,
+        4,
+        2,
+        4,
+        2,
+        2
+      ]
+    },
+    "1x4_strip": {
+      "atoms": 12,
+      "open_boundaries": true,
+      "bonds": 15,
+      "triangles": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10,
+          11
+        ]
+      ],
+      "degree_counts": {
+        "2": 6,
+        "3": 6
+      },
+      "degree_by_atom": [
+        2,
+        2,
+        3,
+        3,
+        2,
+        3,
+        3,
+        2,
+        3,
+        3,
+        2,
+        2
+      ]
+    }
+  },
+  "detunings": [
+    0.25,
+    2.0,
+    4.0
+  ],
+  "omega": 1.0,
+  "nearest_V": 8.0,
+  "density_changes": [
+    {
+      "shape": "2x2_patch",
+      "delta": 0.25,
+      "density_all_minus_nearest": -0.012530647753250523,
+      "ground_energy_all_minus_nearest": 0.15797913982105882
+    },
+    {
+      "shape": "2x2_patch",
+      "delta": 2.0,
+      "density_all_minus_nearest": -0.0029752025075855393,
+      "ground_energy_all_minus_nearest": 0.3282156259938045
+    },
+    {
+      "shape": "2x2_patch",
+      "delta": 4.0,
+      "density_all_minus_nearest": -0.0012583608833826032,
+      "ground_energy_all_minus_nearest": 0.3644367070406602
+    },
+    {
+      "shape": "1x4_strip",
+      "delta": 0.25,
+      "density_all_minus_nearest": -0.011319931470480826,
+      "ground_energy_all_minus_nearest": 0.12842456897386834
+    },
+    {
+      "shape": "1x4_strip",
+      "delta": 2.0,
+      "density_all_minus_nearest": -0.00397411953700838,
+      "ground_energy_all_minus_nearest": 0.30679738454127836
+    },
+    {
+      "shape": "1x4_strip",
+      "delta": 4.0,
+      "density_all_minus_nearest": -0.0016819783707621716,
+      "ground_energy_all_minus_nearest": 0.3595739892441898
+    }
+  ],
+  "degree_group_changes_at_delta2": [
+    {
+      "shape": "2x2_patch",
+      "delta": 2.0,
+      "nearest_degree": 2,
+      "sites_in_group": 5,
+      "mean_signed_local_change": 0.06377708279797828,
+      "mean_absolute_local_change": 0.06377708279797828,
+      "maximum_absolute_local_change": 0.13394401729618688
+    },
+    {
+      "shape": "2x2_patch",
+      "delta": 2.0,
+      "nearest_degree": 3,
+      "sites_in_group": 4,
+      "mean_signed_local_change": -0.04679455098376579,
+      "mean_absolute_local_change": 0.04679455098376579,
+      "maximum_absolute_local_change": 0.06870541218097756
+    },
+    {
+      "shape": "2x2_patch",
+      "delta": 2.0,
+      "nearest_degree": 4,
+      "sites_in_group": 3,
+      "mean_signed_local_change": -0.05580321338195144,
+      "mean_absolute_local_change": 0.05580321338195144,
+      "maximum_absolute_local_change": 0.05775473865408727
+    },
+    {
+      "shape": "1x4_strip",
+      "delta": 2.0,
+      "nearest_degree": 2,
+      "sites_in_group": 6,
+      "mean_signed_local_change": 0.015243950020523209,
+      "mean_absolute_local_change": 0.07762984642530128,
+      "maximum_absolute_local_change": 0.13931069466874146
+    },
+    {
+      "shape": "1x4_strip",
+      "delta": 2.0,
+      "nearest_degree": 3,
+      "sites_in_group": 6,
+      "mean_signed_local_change": -0.02319218909453998,
+      "mean_absolute_local_change": 0.04328534782954322,
+      "maximum_absolute_local_change": 0.07086373646709514
+    }
+  ],
+  "max_eigenpair_residual": 1.568532820298039e-10,
+  "max_norm_error": 2.220446049250313e-15,
+  "all_checks_passed": true,
+  "limitations": [
+    "Open boundaries in both cases; no wrapping.",
+    "Same atom count does not fix bonds, triangles, aspect ratio or coordination.",
+    "No coordination group is assumed to represent the infinite-system bulk.",
+    "Three detunings do not define a phase diagram."
+  ]
+}

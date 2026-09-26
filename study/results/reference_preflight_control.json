@@ -1,0 +1,6 @@
+{
+  "valid_bundled_reference": "passed 62 points",
+  "isolated_corrupted_copy": "rejected with digest mismatch",
+  "output_directory_created_before_rejection": false,
+  "scope": "Failure-mode check performed only on a temporary copied reference; original reference and historical packages untouched."
+}

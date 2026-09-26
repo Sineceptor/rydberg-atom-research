@@ -1,0 +1,8 @@
+{
+  "atomic_success_promotion": true,
+  "failed_run_isolated": true,
+  "completed_run_manifest_verified": true,
+  "launcher_missing_env_no_fallback": true,
+  "launcher_path_with_spaces": true,
+  "note": "Launcher quoting test uses a stub executable; numerical scripts and notebooks tested separately with installed scientific Python."
+}

@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+.ipynb_checkpoints/
+.env
+.env.*
+*.pem
+*.key
+study/runs/
+private/
+private_notes/
+meeting_notes/

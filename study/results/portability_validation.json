@@ -1,0 +1,16 @@
+{
+  "moved_package_with_spaces": true,
+  "all_script_sections_passed": true,
+  "completed_run_files_verified": 86,
+  "delivered_data_unchanged_after_run": true,
+  "coarse_rows_compared": 6561,
+  "maximum_numeric_differences": {
+    "density": 0.0,
+    "gap": 0.0,
+    "ground_energy": 0.0,
+    "staggered_spin_squared": 0.0
+  },
+  "corrupted_reference_failed_before_scanning": true,
+  "failed_output_isolated": true,
+  "note": "Used installed scientific Python; no fresh dependency installation claimed."
+}

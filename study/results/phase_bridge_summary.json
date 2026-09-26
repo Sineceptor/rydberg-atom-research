@@ -1,0 +1,76 @@
+{
+  "description": "Finite open-chain map; no assigned bulk phase boundaries or QSL claim",
+  "grid": {
+    "N": 8,
+    "detuning_points": 31,
+    "interaction_points": 24,
+    "slice_sizes": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "checks": {
+    "maximum_eigenpair_residual": 3.6727004034952976e-10,
+    "dense_sparse_energy_and_gap_error": 2.3092638912203256e-14,
+    "free_density_analytic_error": 0.0,
+    "free_cut_entropy": 9.61027951144475e-16,
+    "hellmann_feynman_error": 1.3408900656486367e-09
+  },
+  "sample_points": [
+    {
+      "N": 8,
+      "V_over_omega": 8.0,
+      "delta_over_omega": -3.0,
+      "density": 0.023637573934538594,
+      "alternating_order_squared": 0.011918589305000591,
+      "staggered_spin_squared": 0.011918589305000591,
+      "gap_over_omega": 3.1658058045128104,
+      "entropy_bits": 0.002322472121394063,
+      "energy_over_omega": -0.6333514347936733,
+      "residual": 2.220841088187595e-11
+    },
+    {
+      "N": 8,
+      "V_over_omega": 8.0,
+      "delta_over_omega": 0.0,
+      "density": 0.22007581858855435,
+      "alternating_order_squared": 0.12704863315948203,
+      "staggered_spin_squared": 0.12704863315948203,
+      "gap_over_omega": 0.6700603691434335,
+      "entropy_bits": 0.16353314228861085,
+      "energy_over_omega": -2.628244909519652,
+      "residual": 1.4168086888766047e-11
+    },
+    {
+      "N": 8,
+      "V_over_omega": 8.0,
+      "delta_over_omega": 3.0,
+      "density": 0.4851563976090449,
+      "alternating_order_squared": 0.20098933162082713,
+      "staggered_spin_squared": 0.20098933162082713,
+      "gap_over_omega": 0.1368567054862062,
+      "entropy_bits": 0.4306734847168134,
+      "energy_over_omega": -12.409625160148298,
+      "residual": 4.6268916770168546e-12
+    },
+    {
+      "N": 8,
+      "V_over_omega": 8.0,
+      "delta_over_omega": 7.0,
+      "density": 0.5278158287701622,
+      "alternating_order_squared": 0.19578657709115535,
+      "staggered_spin_squared": 0.19578657709115535,
+      "gap_over_omega": 0.1645892073526909,
+      "entropy_bits": 0.5209604723826651,
+      "energy_over_omega": -28.526943355307115,
+      "residual": 1.2280662889067834e-11
+    }
+  ]
+}

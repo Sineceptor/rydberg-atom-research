@@ -1,0 +1,11 @@
+{
+  "points": 62,
+  "maximum_errors": {
+    "density": 1.8041124150158794e-13,
+    "alternating_order_squared": 4.6956882826520996e-12,
+    "gap": 1.2434497875801753e-13
+  },
+  "sha256": "5175ea73104f27044414ef4f7097860bc0981f6ea965b1295385dd43cbe88579",
+  "status": "mandatory bundled reference passed",
+  "reference_file": "reference_data/interaction_tail_comparison_2026_09_21.csv"
+}

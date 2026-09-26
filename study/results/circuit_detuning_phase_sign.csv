@@ -1,0 +1,3 @@
+detuning,duration,expected_y,circuit_y,analytic_amplitude_max_error,scipy_amplitude_max_error,deliberately_reversed_sign_state_error
+-1.3,0.7,-0.7895037396899504,-0.7895037396899502,0.0,0.0,0.8789246276117063
+1.3,0.7,0.7895037396899504,0.7895037396899502,0.0,0.0,0.8789246276117063

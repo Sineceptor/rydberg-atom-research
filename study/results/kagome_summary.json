@@ -1,0 +1,202 @@
+{
+  "purpose": "A bounded alternate finite kagome-site direction, not a quantum-spin-liquid test.",
+  "geometry": {
+    "atoms": 12,
+    "cells": [
+      2,
+      2
+    ],
+    "boundary": "open",
+    "primitive_vectors": [
+      [
+        2.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.7320508075688772
+      ]
+    ],
+    "basis": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.5,
+        0.8660254037844386
+      ]
+    ],
+    "nearest_bonds": 17,
+    "nearest_triangles": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ],
+      [
+        5,
+        7,
+        9
+      ],
+      [
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        10,
+        11
+      ]
+    ]
+  },
+  "parameters": {
+    "omega": 1.0,
+    "nearest_V_over_omega": 8.0,
+    "detuning_start": -3.0,
+    "detuning_stop": 7.0,
+    "detuning_step": 0.25,
+    "illustration_delta_over_omega": 2.0,
+    "seed": 230926
+  },
+  "largest_sampled_density_difference": {
+    "absolute": 0.012530647753251661,
+    "all_pairs_minus_nearest": -0.012530647753251661,
+    "delta_over_omega": 0.25,
+    "all_pairs_density": 0.18349761738366066,
+    "nearest_only_density": 0.19602826513691232
+  },
+  "illustration": [
+    {
+      "model": "nearest_only",
+      "atoms": 12,
+      "delta_over_omega": 2.0,
+      "nearest_V_over_omega": 8.0,
+      "ground_energy_over_omega": -9.564670697182134,
+      "first_excited_energy_over_omega": -9.272133627937269,
+      "gap_over_omega": 0.2925370692448652,
+      "density": 0.3054643189570987,
+      "nn_connected_mean": -0.06035540654834349,
+      "ground_norm_error": 6.661338147750939e-16,
+      "max_eigenpair_residual": 3.9513917793776934e-11,
+      "local_reflection_max_error": 3.042011087472929e-14
+    },
+    {
+      "model": "all_pairs",
+      "atoms": 12,
+      "delta_over_omega": 2.0,
+      "nearest_V_over_omega": 8.0,
+      "ground_energy_over_omega": -9.236455071188267,
+      "first_excited_energy_over_omega": -8.900925550786585,
+      "gap_over_omega": 0.33552952040168194,
+      "density": 0.30248911644951354,
+      "nn_connected_mean": -0.046893416299905843,
+      "ground_norm_error": 1.1102230246251565e-16,
+      "max_eigenpair_residual": 7.10298323766175e-11,
+      "local_reflection_max_error": 2.220446049250313e-15
+    }
+  ],
+  "illustration_redistribution": {
+    "atom0_nearest_only": 0.5209684459289821,
+    "atom0_all_pairs": 0.6549124632251588,
+    "maximum_absolute_local_occupation_difference": 0.13394401729617678,
+    "central_triangle_atoms": [
+      5,
+      7,
+      9
+    ],
+    "central_triangle_empty_probabilities": {
+      "nearest_only": 0.5984187249343522,
+      "all_pairs": 0.7651196434100114
+    }
+  },
+  "checks": {
+    "triangle": {
+      "matrix_max_error": 3.552713678800501e-15,
+      "lowest_two_energy_max_error": 2.4424906541753444e-15,
+      "max_residual": 2.869164973690274e-15
+    },
+    "six_site_patch": {
+      "matrix_max_error": 7.105427357601002e-15,
+      "lowest_two_energy_max_error": 5.329070518200751e-15,
+      "max_residual": 1.199192629697701e-11
+    },
+    "reflection": {
+      "atom_permutation": [
+        0,
+        2,
+        1,
+        6,
+        8,
+        7,
+        3,
+        5,
+        4,
+        9,
+        11,
+        10
+      ],
+      "coordinate_max_error": 2.220446049250313e-16,
+      "coupling_max_error": 1.5987211554602254e-14
+    },
+    "scan": {
+      "points_per_model": 41,
+      "models": 2,
+      "max_eigenpair_residual": 2.5484104172030727e-10,
+      "max_ground_norm_error": 2.886579864025407e-15,
+      "max_local_reflection_error": 1.1612932837579137e-13,
+      "minimum_full_minus_nearest_ground_energy": 0.0025683374657031743,
+      "minimum_gap": 0.22988923053710764
+    },
+    "independent_random_start_repeats": [
+      {
+        "model": "nearest_only",
+        "delta_over_omega": 4.0,
+        "lowest_two_energy_max_error": 7.105427357601002e-14
+      },
+      {
+        "model": "all_pairs",
+        "delta_over_omega": 4.25,
+        "lowest_two_energy_max_error": 1.7053025658242404e-13
+      }
+    ],
+    "triangle_probabilities": {
+      "triangles_per_model": 5,
+      "max_normalization_error": 1.3322676295501878e-15,
+      "probability_two_or_more_range": [
+        0.0010018653653615529,
+        0.018127365407076147
+      ]
+    },
+    "free_triangle_binomial_reference": {
+      "delta_over_omega": 2.0,
+      "V_over_omega": 0.0,
+      "single_atom_excitation_probability": 0.9472135954999579,
+      "probabilities_0_to_3_excited": [
+        0.00014708427503995825,
+        0.007917960675006329,
+        0.14208203932499386,
+        0.8498529157249599
+      ],
+      "probability_two_or_more": 0.9919349550499538,
+      "dense_tensor_probability_max_error": 2.7755575615628914e-15
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.1"
+  },
+  "all_checks_passed": true
+}

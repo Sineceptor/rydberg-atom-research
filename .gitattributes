@@ -1,0 +1,5 @@
+# Preserve exact CSV bytes, including CRLF, for the recorded SHA-256 checks.
+*.csv -text
+# Retain alignment spaces in the two recorded circuit diagrams.
+study/results/bell_circuit.txt whitespace=-blank-at-eol
+study/results/one_time_step_circuit.txt whitespace=-blank-at-eol
