@@ -1,0 +1,5 @@
+Np=12 eps=0.8 g=244.0 Delta= 1.00 n=0.169  SN(pi)/Np=0.054  SN(2pi/3)/Np=0.017  Stau(0)/Np=0.027 Stau(pi)/Np=0.028
+Np=12 eps=0.8 g=244.0 Delta= 2.00 n=0.218  SN(pi)/Np=0.136  SN(2pi/3)/Np=0.011  Stau(0)/Np=0.034 Stau(pi)/Np=0.035
+Np=12 eps=0.8 g=244.0 Delta= 3.00 n=0.241  SN(pi)/Np=0.180  SN(2pi/3)/Np=0.007  Stau(0)/Np=0.036 Stau(pi)/Np=0.036
+Np=12 eps=0.8 g=244.0 Delta= 4.00 n=0.261  SN(pi)/Np=0.133  SN(2pi/3)/Np=0.012  Stau(0)/Np=0.030 Stau(pi)/Np=0.029
+Np=12 eps=0.8 g=244.0 Delta= 5.00 n=0.316  SN(pi)/Np=0.015  SN(2pi/3)/Np=0.081  Stau(0)/Np=0.008 Stau(pi)/Np=0.007

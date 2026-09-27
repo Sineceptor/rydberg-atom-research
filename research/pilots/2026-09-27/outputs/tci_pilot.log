@@ -1,0 +1,15 @@
+eps=0.0 N=12: max dn/dDelta=0.188 at Delta=0.60; min gap=0.0733 at Delta=3.00; t=1s
+eps=0.0 N=14: max dn/dDelta=0.188 at Delta=0.70; min gap=0.0575 at Delta=3.00; t=9s
+eps=0.0 N=16: max dn/dDelta=0.190 at Delta=0.70; min gap=0.0463 at Delta=3.00; t=58s
+eps=0.3 N=12: max dn/dDelta=0.168 at Delta=0.60; min gap=0.0635 at Delta=3.00; t=3s
+eps=0.3 N=14: max dn/dDelta=0.166 at Delta=0.70; min gap=0.0505 at Delta=3.00; t=24s
+eps=0.3 N=16: max dn/dDelta=0.165 at Delta=0.80; min gap=0.0410 at Delta=3.00; t=170s
+eps=0.45 N=12: max dn/dDelta=0.155 at Delta=0.40; min gap=0.0700 at Delta=3.00; t=5s
+eps=0.45 N=14: max dn/dDelta=0.153 at Delta=0.40; min gap=0.0572 at Delta=3.00; t=43s
+eps=0.45 N=16: max dn/dDelta=0.152 at Delta=0.40; min gap=0.0475 at Delta=3.00; t=287s
+eps=0.6 N=12: max dn/dDelta=0.155 at Delta=0.20; min gap=0.0900 at Delta=3.00; t=9s
+eps=0.6 N=14: max dn/dDelta=0.154 at Delta=0.20; min gap=0.0792 at Delta=3.00; t=76s
+eps=0.6 N=16: max dn/dDelta=0.153 at Delta=0.20; min gap=0.0707 at Delta=3.00; t=630s
+eps=0.7 N=12: max dn/dDelta=0.156 at Delta=0.20; min gap=0.1170 at Delta=3.00; t=22s
+eps=0.7 N=14: max dn/dDelta=0.155 at Delta=0.20; min gap=0.1112 at Delta=3.00; t=187s
+eps=0.7 N=16: max dn/dDelta=0.155 at Delta=0.20; min gap=0.1070 at Delta=3.00; t=1147s

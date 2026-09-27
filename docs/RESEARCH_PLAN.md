@@ -1,113 +1,95 @@
-# Research plan to 15 October 2026
+# Research plan to 15 October 2026 (revised 27 September)
 
-Status: proposal, drafted 26 September 2026. Nothing below has been run beyond the pilot checks listed in section 1. The direction must be confirmed with Prof. Rubenstein before work starts.
+This revision replaces the 26 September draft. An adversarial literature review and new pilot calculations changed the headline. The direction must be confirmed with Prof. Rubenstein before production runs.
 
-## 1. Where the project stands
+## 1. Why the plan changed
 
-**Existing work is careful but not new.** The package validates exact diagonalization for N ≤ 12 against Qiskit and studies blockade, defects and entanglement, small geometries, interaction cutoffs, odd/even chains and a 12-site kagome patch. All of this is established physics (Bernien et al. 2017; Rader & Läuchli 2019). It supplies a foundations section and methods, not a novelty claim.
+- **Zeybek, Mukherjee & Schmelcher** (PRL 131, 203003 (2023); arXiv:2303.17470), read in full. Their model uses two Rydberg levels, dipolar hopping, fixed particle number and the laser off. In that dimerized chain they already find a density-wave → bond-order transition at half filling. "Dimerization melts the Z2 crystal into shared pairs" is therefore not a new idea, although our laser-driven, single-level model is a different system.
+- **Tricritical Ising (TCI)** has already been measured in a uniform single-species vdW chain (Sun et al., arXiv:2601.16275, Nature 2026, using an inverted sweep). Pilot exact diagonalization also finds only Ising behaviour along the dimerized Z2 line: gap ratios 7.87–8.15 against the Ising value 8. There is also a classical-limit reason. Tricriticality needs a net attraction V₂ < 0 between aligned occupied pairs. Aligned pairs always sit 2a apart, so dimerization cannot supply it. TCI is therefore a pre-registered negative test, not the headline.
+- **The single boundary domain wall** in even open chains is textbook kink-in-a-box physics. It becomes a methods/system-size subsection.
+- **Degenerate-packing selection** is trivial here: the unit-disk graph is disjoint edges, and the vdW tails lift the degeneracy at first order. At most one motivating sentence.
 
-**The paper document** has an introduction and headings. The abstract, project-direction paragraph, Methods and all three Results sections are empty. Open comments from Prof. Rubenstein:
+## 2. Direction
 
-1. Insert plots, with captions.
-2. Explain what is in the package and how it works.
-3. Explain what solves the Hamiltonian, with key equations.
-4. Expand the introduction: phases and quantum computing (Lukin group papers).
-5. Check how easy it is to go to larger systems.
+**Working title:** *Pair pseudo-spins in dimerized Rydberg chains: even-period crystals split, odd-period crystals are protected.*
 
-**Pilot checks (26 Sept, not committed as code):**
+**Model:** single Rydberg level, laser-driven, van der Waals only. Gaps alternate s = a(1−ε) and w = a(1+ε); units Ω = a = 1 and g = (R_b/a)⁶. Symmetries: translation by one pair T₂, inversion about a strong-bond centre I_s, and I_w = T₂I_s.
 
-- New DMRG reproduces the saved N = 12 energy (−18.399305357539) and matches exact diagonalization to about 10⁻¹², including dimerized chains.
-- Exact-diagonalization cost: 4 s (N = 16), 25 s (N = 18), 196 s and 2.8 GB (N = 20). The practical ceiling is N ≈ 22; DMRG reaches hundreds of atoms. This answers comment 5.
-- Exact diagonalization at N = 16, R_b/a = 1.5, Δ/Ω = 2.5: the crystal melts as dimerization grows. Interior |⟨n_L − n_R⟩| is 0.21 → 0.10 → 0.02 at ε = 0.25 → 0.6 → 0.7. The effective-model estimate gives melting near ε ≈ 0.6.
-- **Blocking issue:** infinite-chain DMRG is unconverged beyond ε ≈ 0.3.
+**Unifying idea.** An occupied strong pair carries a pseudo-spin τ = n_L − n_R, which I_s flips. Occupied pairs m pair-spacings apart couple through the second difference
 
-## 2. Recommended direction
+$$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 
-**Working title:** *Melting a Rydberg crystal by dimerization: effective Ising theory and large-scale simulations of alternating-spacing atom chains.*
+- **Sign:** positive by convexity of 1/r⁶, so the coupling is ferromagnetic in τ.
+- **Limit:** it vanishes as ε → 1, while the laser-induced transverse field h stays finite. Every crystal whose pairs carry a free L/R choice must therefore melt its τ order at some ε.
 
-This fills the outline's existing heading "How the Physics Varies with Alternating Coupling Constants".
+**The even/odd rule (headline hypothesis):**
 
-| Option | Verdict |
+- **Even-period crystals split.** In the Z₄ regime (R_b/a ≈ 3–3.5), dimerization reduces the symmetry acting on the four period-4 patterns from D₄ to the Klein group Z₂×Z₂. The single Z₄ melting then separates into two transitions, with an intermediate **pair-density-wave (PDW) phase** between them. In the PDW, every other strong pair holds one excitation shared symmetrically between its atoms. It breaks T₂ and preserves I_s, so it is a distinct phase.
+- **Odd-period crystals are protected.** In the Z₃ regime, T₂ still cycles the three patterns and I_s swaps two of them. D₃ survives, so there is no new transition, only shifts.
+- **Z₂ backbone.** The Z₂ crystal melts through a single Ising line Δ_c(ε, g) into the ordinary disordered phase.
+  - The regime where each pair shares one excitation is a crossover, not a phase: there is no U(1), and the inversion index is trivial.
+  - An effective transverse-field Ising model with a dressed energy denominator predicts this line quantitatively at strong dimerization.
+
+**Pilot evidence** (exploratory scripts: [research/pilots/2026-09-27](../research/pilots/2026-09-27/README.md)):
+
+| Question | Result so far |
 |---|---|
-| Kagome / spin liquid | Crowded field; needs large 2D simulations; not feasible by 15 Oct |
-| Interaction-cutoff study | Not new; reuse it to justify keeping all tails |
-| End-detuning boundary study | Incremental; kept as fallback |
-| **Dimerized van der Waals chain** | Matches the outline, feasible, apparently open |
+| Z₂ line, g = 11.39 (R_b/a = 1.5), ring ED | Δ_c = 1.0785, 1.326, 1.805, 3.149, 5.611 at ε = 0, 0.3, 0.45, 0.6, 0.7 (size pairs agree to 1e-4). R = 7.9–8.0. |
+| Effective theory | Leading order misses Δ_c by 63, 39, 17, 7.6% at ε = 0.3, 0.45, 0.6, 0.7. Dressing the denominators gives about 0.5% at ε ≥ 0.6 and fails below ε ≈ 0.45. |
+| Z₄ → PDW, R_b/a = 3.3, Δ = 3, constrained ring ED | The inversion-odd gap closes for ε ≤ 0.2, is critical near 0.3 (N·gap ≈ 0.72), and saturates for ε ≥ 0.4. The PDW ground states have T₂ = ±1 and are both I_s-even. |
+| Z₃ control, R_b/a = 2.7, Δ = 5, N = 24 | Threefold degeneracy exact at ε = 0, 0.3 and 0.6 |
+| Bulk melting at Δ = 2.5, g = 11.39 | ε_c ≈ 0.53–0.55 (the earlier estimate of 0.6 was wrong) |
 
-**Novelty case.** Published dimerized Rydberg studies add dipolar exchange between two or three Rydberg levels (Zeybek, Mukherjee & Schmelcher, PRL 131, 203003 (2023); Mögerle et al., PRX Quantum 2025; de Léséleuc et al., Science 2019) or use ladders. No phase diagram or effective theory was found for the single-level, van der Waals–only chain. This is based on a search-engine scan only; arXiv was unreachable from the analysis environment. Prof. Rubenstein must confirm it, and the Zeybek et al. paper must be read in full.
+**Novelty status.** Two independent searches found no study of a spacing-dimerized, single-level vdW chain, and none of its Z₃/Z₄ regimes. The web search was incomplete (arXiv full text was unreachable).
 
-**Scientific content:**
+**Must read before committing (gate P0, by 29 Sept):**
+- Chepiga, arXiv:2308.12838 (PRL 132, 076505)
+- arXiv:2408.15965 (alternating-species chain)
+- arXiv:2412.11201 and 2411.05494 (ladders)
+- arXiv:2406.20093
+- arXiv:2403.06649
+- arXiv:2601.16275 and 2506.21963
 
-1. Exact pair-site formulation (each strong pair becomes one 4-state site).
-2. Effective transverse-field Ising model ([DIMERIZED_THEORY.md](DIMERIZED_THEORY.md)): |J| = [V_w + V(2a+s) − 2V(2a)]/4 and h = (Ω²/4)[1/Δ + 1/(V_s − Δ)].
-   - Test the exact Ising order parameter m = (1 − h²/J²)^{1/8} against ⟨n_L − n_R⟩ from the simulations.
-3. The same model's boundary fields explain the earlier finding that ~77% of the N = 8 weight has exactly one 00 bond.
-4. Phase diagram in (Δ/Ω, ε) compared with the prediction.
-5. Nature of the transition: Ising (central charge c = 1/2) is expected. At small Δ the problem resembles a Blume–Capel chain, so a tricritical point is possible. This is a stretch goal, not a promise.
-6. Hardware window. A 4 µm minimum spacing limits ε to roughly 0.3–0.45 for realistic R_b, so scans must include regimes (smaller Δ or R_b/a) where melting occurs at accessible ε.
+**Not to be claimed:** "first", "simplest route to TCI", "emergent supersymmetry", a new phase for the shared-pair disordered regime, "exact for hundreds of atoms".
 
-**Not to be claimed:** a new phase of matter, topological order or a spin liquid. The pair paramagnet is symmetric, so no symmetry sets it apart from the ordinary disordered phase.
+## 3. Decisive computations (4 cores; about 75–95 CPU-hours in total)
 
-## 3. Fixes to existing material
+| Priority | Computation | Decides | Due |
+|---|---|---|---|
+| P0 | Literature gate (list above), read in full | Whether the Z₄/PDW split is already published | 29 Sept |
+| P1 | Validate the constrained basis against full ED (N = 16, 20; periodic and open; R_b/a = 3.3; ε ∈ {0, 0.3, 0.5}; Δ ∈ {2, 3, 5}) | Go/no-go for the headline | 29 Sept |
+| P2 | Z₄/PDW gap map: constrained periodic ED, N = 16–36 on a 12×8 (Δ, ε) grid, N = 40 on three cuts. Count degeneracies using T₂ and I_s quantum numbers; locate N·gap crossings | Extent of the PDW and its phase boundaries | 2 Oct |
+| P3 | Z₂ line Δ_c(ε), gap ratio R, and c from E₀(N) at g ∈ {4.83, 11.39, 40} | Backbone boundary and universality | 2 Oct |
+| P4 | Effective theory for both lines: leading order, dressed, and second-order Schrieffer–Wolff; classical Ω → 0 skeleton; BEG K/J table | Quantitative theory and validity map; classical TCI criterion | 3 Oct |
+| P5 | Z₃ control: N = 24, 30, 36; ε from 0 to 0.7 | Odd-period protection | 3 Oct |
+| P6 | Infinite/finite DMRG repair, validated against ring ED (−1.2284 per atom at ε = 0.55, Δ = 2.5, g = 11.39) | Whether DMRG can be used for large systems | 4 Oct |
+| P7 | Large-system confirmation: DMRG with odd numbers of pairs or pinned ends; Calabrese–Cardy central charge; Z₂ line and two Z₄ cuts | c = 1/2 at hundreds of atoms (the professor's "larger systems" comment) | 6 Oct |
+| P8 | Boundary-wall subsection (reuse the N = 12/16 data; add N = 20) | Methods warning; explains the earlier N = 8 finding | 5 Oct |
+| P9 | Hardware table in lab units (QuEra Aquila, 4 µm minimum spacing) | Which predictions current hardware can test | 5 Oct |
 
-**Paper document:**
+**Gates:**
+- 29 Sept: P0 and P1 pass.
+- 2 Oct: P2 shows the predicted degeneracy counts beyond 12 pairs.
+- 6 Oct: numerics frozen.
+- 6–13 Oct: figures and manuscript.
+- 13–15 Oct: self-audit, with every quoted number recomputed, then send to the professor.
 
-- Write the project-direction paragraph.
-- Expand the introduction (phases; blockade gates and logical qubits; key papers: Jaksch 2000, Lukin 2001, Bernien 2017, Keesling 2019, Levine 2019, Ebadi 2021 and 2022, Semeghini 2021, Evered 2023, Bluvstein 2022 and 2024).
-- Write Methods: Hamiltonian, exact diagonalization, DMRG/infinite DMRG, observables, the Calabrese–Cardy entanglement formula, validation, package map.
-- Captioned figures; one numbered citation style; abstract last.
+**Fallback.** If P0 finds the Z₄ split published, or P1/P2 show the PDW is an artefact of the restricted basis, the paper becomes the Z₂ backbone plus the negative TCI result plus the boundary wall. Working title: *Dimerized Rydberg chains as quantum order–disorder ferroelectrics: pseudo-spin theory, phase boundary, and why geometry alone does not make them tricritical.* That is still an unstudied model with a validated quantitative theory, and most of it is already in hand.
 
-**Repository** (🔴 = blocks new results):
+## 4. Mapping onto the paper outline
 
-| # | Problem | Fix |
-|---|---|---|
-| 🔴1 | Infinite DMRG unconverged past ε ≈ 0.3 | Project out the doubly excited pair state with a perturbative correction; use several initial states and keep the lowest energy; tune the mixer schedule; compare with finite DMRG at N = 100–200. Gate: agreement to 10⁻⁶ at 10 points spanning the transition |
-| 🔴2 | No external benchmark of the DMRG pipeline | Reproduce the published uniform-chain Z2 transition before any new claim |
-| 3 | Slow exact-diagonalization builder (Python lists) | Vectorize; optionally use reflection symmetry |
-| 4 | Duplicated ground-state helpers; legacy M diagnostic | One module plus automated tests; keep the reference regression |
-| 5 | Requirements pin Mac-only and unrelated packages | Minimal core plus notebook extras; add TeNPy |
-| 6 | Notation drift (Q, S, M; bit order) | One symbol, one stated convention, R_b/a alongside g |
-| 7 | Figure titles carry caveats | Publication figures with panel labels and a consistent colorblind-safe style |
-| 8 | Docs dominated by disclaimers | One limitations section; README states question and results |
-| 9 | Cutoff study framed as a headline result | Present it as the reason all tails are kept; the V(2a) cancellation shows why |
-| 10 | "Defect" is an ideal interaction switch-off | Label it as an idealized control, or redo it as a vacancy or local detuning |
-| 11 | Kagome pilot off-topic | Keep in the repository as an appendix, not in the paper |
+| Heading | Content |
+|---|---|
+| Methods: algorithms for solving the Hamiltonian | Dense and Lanczos ED, symmetry-resolved ring ED, the exact pair-site regrouping, DMRG/iDMRG, observables, gap ratios and entanglement scaling |
+| Methods: computational details in Qiskit | Pauli-operator construction and split-step circuits as independent small-N checks |
+| Results: coupling constant | R_b/a selects the Z₂, Z₃ or Z₄ regime; existing blockade, defect-control and geometry results, condensed |
+| Results: alternating coupling constants | The even/odd rule, the PDW phase, the Z₂ line and the effective theory, and the negative TCI test |
+| Results: system size | ED cost versus DMRG; symmetry-resolved ED to N ≈ 40; DMRG to hundreds of atoms; even-chain boundary wall; interaction-cutoff errors |
 
-## 4. Work plan with checkpoints
+## 5. Existing-material fixes (status)
 
-- **A. Fix and benchmark** (items 1–2). If infinite DMRG is not validated by 1 Oct, use finite DMRG with N up to 200 and finite-size scaling.
-- **B. Theory.** Ethan re-derives the effective model by hand, adds next-order corrections and plots the predicted melting line.
-- **C. Phase diagram.** R_b/a ≈ 1.2, 1.35, 1.5; Δ/Ω from 0 to 5; ε from 0 to 0.7; adaptive grid. Record order, density, correlation length and entanglement. About 2,000 points, run overnight.
-- **D. Transition character.** Central-charge fits at about 4 boundary points (N up to 200); first-order tests at small Δ.
-- **E. System size and boundaries.** Exact diagonalization to N = 20 plus DMRG; odd/even chains; quantitative test of the boundary-field prediction.
-- **F. Hardware mapping.** Accessible region on current analog hardware and the snapshot signature of melting. Optional: simulated adiabatic ramp.
-
-**Planned figures:**
-
-1. Setup and blockade
-2. Uniform-chain benchmark
-3. Pair-to-pseudo-spin mapping
-4. Order versus ε, compared with the Ising formula
-5. Phase diagram with the predicted line
-6. Entanglement scaling
-7. Finite-chain boundaries and parity
-8. Hardware window
-
-## 5. Schedule
-
-| Dates | Work | Checkpoint |
-|---|---|---|
-| 27–28 Sept | Proposal email to Prof. Rubenstein; item A; read Zeybek 2023, Bernien 2017, Browaeys & Lahaye 2020 | Go-ahead |
-| 29 Sept–1 Oct | Derivation (Ethan); code consolidation and tests; Methods and Introduction drafts | Infinite DMRG validated, or fallback |
-| 2–5 Oct | Phase-diagram runs; figures 4–5 | Professor check-in, 5 Oct |
-| 6–8 Oct | Items D–E; all captioned figures in the paper document | Figures final |
-| 9–11 Oct | Results, discussion, abstract | Full draft to professor, 11 Oct |
-| 12–15 Oct | Revisions, repository cleanup, reproducibility; arXiv only with professor approval | Final |
-
-**Cut order if time slips:** ramp simulation, then the tricritical search, then the third blockade radius.
-
-**If the direction is already published:** move the same machinery to the end-detuning study in [FUTURE_WORK.md](FUTURE_WORK.md).
+The historical `study/` package is frozen and checksum-verified. The new maintained code is in `rydberg_chain/` with `tests/` and `validation/`. The status of the eleven fixes listed on 26 September is tracked in [VALIDATION.md](VALIDATION.md) and the commit history.
 
 ## 6. Ownership and disclosure
 
-Ethan should personally derive the effective model, make the Ising comparison and write the introduction and discussion. The paper and any application materials disclose AI assistance, as the repository already does. Peer review cannot finish by 15 October; a complete manuscript (and an arXiv preprint if the professor approves) is the realistic outcome.
+The student derives J_m, h, the dressing, the symmetry table and the gap-ratio method himself, and reproduces the key numbers from the maintained package. AI assistance in code, pilots and drafting is disclosed, in line with the professor's and the journal's policy.
