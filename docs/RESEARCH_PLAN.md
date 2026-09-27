@@ -43,12 +43,22 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 **Novelty status.** Two independent searches found no study of a spacing-dimerized, single-level vdW chain, and none of its Z₃/Z₄ regimes. The web search was incomplete (arXiv full text was unreachable).
 
 **Must read before committing (gate P0, by 29 Sept):**
-- Chepiga, arXiv:2308.12838 (PRL 132, 076505)
-- arXiv:2408.15965 (alternating-species chain)
+- ~~Chepiga, arXiv:2308.12838 (PRL 132, 076505)~~ read 27 Sept
+- ~~arXiv:2408.15965 (alternating-species chain)~~ read 27 Sept
 - arXiv:2412.11201 and 2411.05494 (ladders)
 - arXiv:2406.20093
 - arXiv:2403.06649
 - arXiv:2601.16275 and 2506.21963
+
+**P0 findings so far (27 September):**
+- **Chepiga, arXiv:2308.12838.**
+  - *System:* a uniform chain in which each atom can reach two Rydberg levels, studied as a blockade model with DMRG up to 907 sites.
+  - *Result:* the period-4 phase is reached from the disordered phase through an intermediate period-2 phase and two Ising transitions. The two lines merge at an Ashkin–Teller point, followed by chiral transitions or floating phases. The ratio of the two Rabi frequencies tunes this structure.
+  - *Consequence for us:* this is the closest analogue of our Z₄ splitting and must be cited as such. The mechanism differs: hers needs a second Rydberg level and keeps translation symmetry, while ours comes from geometry alone and breaks translation by one atom explicitly. Her diagnostics suit P2 and P7: Ising scaling of local order parameters, Calabrese–Cardy central charge, and |q − π/2|·ξ for chiral versus floating behaviour.
+- **arXiv:2408.15965.**
+  - *System:* alternating A–B atomic species at uniform spacing, with attractive interspecies interactions.
+  - *Result:* period-4 |1100…⟩ and period-6 |111000…⟩ product states, plus quantum many-body scars.
+  - *Consequence for us:* no overlap with geometric dimerization, the shared-excitation pair phase, or Z₄ splitting.
 
 **Not to be claimed:** "first", "simplest route to TCI", "emergent supersymmetry", a new phase for the shared-pair disordered regime, "exact for hundreds of atoms".
 
@@ -56,7 +66,7 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 
 | Priority | Computation | Decides | Due |
 |---|---|---|---|
-| P0 | Literature gate (list above), read in full | Whether the Z₄/PDW split is already published | 29 Sept |
+| P0 | Literature gate. **Partly done 27 Sept:** Chepiga (arXiv:2308.12838, PRL 132, 076505) and arXiv:2408.15965 were read in full; neither studies the spacing-dimerized single-level chain (details in Sec. 2). Still to read: arXiv:2412.11201, 2411.05494, 2406.20093, 2403.06649, 2601.16275, 2506.21963 | Whether the Z₄/PDW split is already published | 29 Sept |
 | P1 | Validate the constrained basis against full ED (N = 16, 20; periodic and open; R_b/a = 3.3; ε ∈ {0, 0.3, 0.5}; Δ ∈ {2, 3, 5}) | Go/no-go for the headline | 29 Sept |
 | P2 | Z₄/PDW gap map: constrained periodic ED, N = 16–36 on a 12×8 (Δ, ε) grid, N = 40 on three cuts. Count degeneracies using T₂ and I_s quantum numbers; locate N·gap crossings | Extent of the PDW and its phase boundaries | 2 Oct |
 | P3 | Z₂ line Δ_c(ε), gap ratio R, and c from E₀(N) at g ∈ {4.83, 11.39, 40} | Backbone boundary and universality | 2 Oct |
