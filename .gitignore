@@ -13,3 +13,4 @@ study/runs/
 private/
 private_notes/
 meeting_notes/
+.pytest_cache/

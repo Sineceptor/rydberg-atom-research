@@ -1,3 +1,5 @@
+> **Superseded (27 September 2026).** This proposal used a coupling-based alternation parameter α. The current plan uses geometric dimerization ε (gaps a(1 ∓ ε)); see [RESEARCH_PLAN.md](RESEARCH_PLAN.md) and [DIMERIZED_THEORY.md](DIMERIZED_THEORY.md). This file is kept as a historical record.
+
 # Proposed next experiment
 
 **How do alternating neighbour interactions change the excitation profile of a finite Rydberg chain, and can the mean density conceal errors at individual sites when distant interactions are omitted?**

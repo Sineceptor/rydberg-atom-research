@@ -17,7 +17,7 @@ Symmetries of the infinite chain:
 
 The uniform chain (ε = 0) also has translation by one atom, which dimerization removes.
 
-**Exact regrouping.** Treat each pair as one site with four states |00⟩, |10⟩, |01⟩, |11⟩. V_s becomes an on-site energy and only inter-pair terms connect sites. This is the same Hamiltonian, not an approximation. Pair-site DMRG matches exact diagonalization to 2 × 10⁻⁹ or better.
+**Exact regrouping.** Treat each pair as one site with four states |00⟩, |10⟩, |01⟩, |11⟩. V_s becomes an on-site energy and only inter-pair terms connect sites. This is the same Hamiltonian, not an approximation. Pair-site DMRG matches exact diagonalization to 10⁻⁸ or better in the package tests (N = 12–14), and to 4 × 10⁻¹³ for the 20-atom benchmark (validation/results/scaling_benchmark.json).
 
 ## 2. Pseudo-spin couplings
 
@@ -45,14 +45,14 @@ This dressed form is empirical so far. A controlled Schrieffer–Wolff derivatio
 
 ## 3. Z₂ regime: one Ising line
 
-The ordered state (all τ = +1 or all τ = −1) breaks I_s and keeps T₂. The nearest-neighbour Ising chain is critical at J₁ = h. The pilot ring exact diagonalization at g = 11.39 gives the following (size pairs agree to 1e-4; gap ratios R = 7.9–8.0, Ising):
+The ordered state (all τ = +1 or all τ = −1) breaks I_s and keeps T₂. The nearest-neighbour Ising chain is critical at J₁ = h. The pilot ring exact diagonalization at g = 11.39 gives the following (size pairs agree to 1e-4; gap ratios R = 7.9–8.0, Ising). Dressed values are recomputed from the formula in section 2 with nearest-pair J₁; other reasonable dressing prescriptions change the ε ≥ 0.6 errors within 0.2–1.1%:
 
 | ε | Δ_c (ED) | leading-order h₀ | dressed h |
 |---|---|---|---|
-| 0.3 | 1.326 | 0.494 (−63%) | fails |
-| 0.45 | 1.805 | 1.101 (−39%) | about +6% |
-| 0.6 | 3.149 | 2.616 (−17%) | about 0.5% |
-| 0.7 | 5.611 | 5.186 (−7.6%) | about 0.5% |
+| 0.3 | 1.326 | 0.494 (−63%) | 2.67 (+101%, fails) |
+| 0.45 | 1.805 | 1.101 (−39%) | 2.08 (+15%) |
+| 0.6 | 3.149 | 2.616 (−17%) | 3.18 (+0.9%) |
+| 0.7 | 5.611 | 5.186 (−7.6%) | 5.64 (+0.5%) |
 
 - For ε ≲ 0.45 the transition is driven by empty pairs, not τ flips, and no pseudo-spin model describes it.
 - At Δ = 2.5 the bulk crystal melts at ε_c ≈ 0.53–0.55.
@@ -65,7 +65,7 @@ The regime beyond the line, where each pair shares one excitation, is **not** a 
 - Z₄ crystal → **pair density wave (PDW)**: u ordered, τ disordered; breaks T₂, preserves I_s;
 - PDW → disordered.
 
-The τ transition is governed by J₂ against h. At large ε the PDW is simply the Z₂ crystal of a chain of two-atom superatoms. Unlike rectangular ladders, τ is flipped by a spatial inversion rather than an internal leg swap, so a chiral term u∂v − v∂u is symmetry-allowed near the uniform point.
+The τ transition is governed by J₂ against h. At large ε the PDW is simply the Z₂ crystal of a chain of two-atom superatoms. It resembles the rung-symmetric Z_p⁺ phases of two-leg ladders. Here τ is reversed by a spatial inversion rather than by an internal leg exchange, and a derivative (Huse–Fisher chiral) coupling between u and the I_s-odd components of the order parameter is symmetry-allowed near ε = 0. Chiral transitions are also reported in ladders, so this is a difference in mechanism, not a claim that ladders forbid chirality.
 
 **Z₃ regime (R_b/a ≈ 2.7).** T₂ still cycles the three period-3 patterns and I_s exchanges two of them, so D₃ survives. Dimerization should add no new transition, only non-universal shifts.
 

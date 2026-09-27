@@ -22,7 +22,7 @@ These are exploratory scripts and raw outputs from the direction-finding pilots 
 - **Z2 line (g = 11.39, R_b/a = 1.5), from ring ED:**
   - Δ_c/Ω = 1.0785, 1.326, 1.805, 3.149, 5.611 at ε = 0, 0.3, 0.45, 0.6, 0.7. Values agree to 1e-4 between size pairs.
   - Gap ratios R = 7.87–8.15 (Ising value 8).
-  - Leading-order effective Ising estimate misses Δ_c by 17–63% for ε ≤ 0.6. A dressed denominator brings the error to about 0.5% at ε = 0.6–0.7.
+  - Leading-order effective Ising estimate misses Δ_c by 17–63% for ε ≤ 0.6. A dressed denominator brings the error to +0.9% and +0.5% at ε = 0.6 and 0.7, and +15% at ε = 0.45.
 - **Z4 regime (R_b/a = 3.3, Δ = 3), constrained ED, N = 16–32:**
   - The inversion-odd gap closes for ε ≤ 0.2 and saturates for ε ≥ 0.4.
   - The two lowest states for ε ≥ 0.4 have T2 = ±1 and are both inversion-even. This is consistent with a pair-density-wave phase.
@@ -31,3 +31,14 @@ These are exploratory scripts and raw outputs from the direction-finding pilots 
 Corrections to earlier notes:
 - The open-chain interior values of |n_L − n_R| are contaminated by the boundary-forced domain wall.
 - The disordered regime with one excitation shared per pair is a crossover, not a separate phase.
+
+## Drafting checks (27 September)
+
+`drafting_checks/` holds the short recalculations that the manuscript fact-checkers ran while verifying the draft sections in `paper/sections/`. Source comments that say "scratch check" refer to these files.
+
+| File | Purpose |
+|---|---|
+| `ced_check_D3.txt`, `d3_N16.txt`, `d3_N24.txt`, `d3_N32.txt`, `p1lite.py` | Z₄/PDW gap sequence at R_b/a = 3.3, Δ = 3 (rerun of `scripts/ced.py`); a first light check of the constrained basis |
+| `crit_eps0.5_g11.39_d3.json`, `crit_eps0.55_g11.39_d3.json`, `crit_log_*.txt` | Extra Z₂-line points at ε = 0.5 and 0.55 |
+| `eff_check.py`, `z4_eff.py`, `derived.py` | Effective-theory numbers: leading-order and dressed h, the J₂ estimate for the Z₄ line, wall hopping fits and classical wall energies |
+| `methods_*.py`, `methods_*.json` | Methods-section checks: DMRG versus ED, 3-state versus 4-state pair basis, ring-ED precision |

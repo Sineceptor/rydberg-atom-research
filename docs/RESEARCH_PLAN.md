@@ -35,7 +35,7 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 | Question | Result so far |
 |---|---|
 | Z₂ line, g = 11.39 (R_b/a = 1.5), ring ED | Δ_c = 1.0785, 1.326, 1.805, 3.149, 5.611 at ε = 0, 0.3, 0.45, 0.6, 0.7 (size pairs agree to 1e-4). R = 7.9–8.0. |
-| Effective theory | Leading order misses Δ_c by 63, 39, 17, 7.6% at ε = 0.3, 0.45, 0.6, 0.7. Dressing the denominators gives about 0.5% at ε ≥ 0.6 and fails below ε ≈ 0.45. |
+| Effective theory | Leading order misses Δ_c by 63, 39, 17, 7.6% at ε = 0.3, 0.45, 0.6, 0.7. Dressed denominators give +0.9% and +0.5% at ε = 0.6 and 0.7, but +15% at 0.45 and fail at 0.3. |
 | Z₄ → PDW, R_b/a = 3.3, Δ = 3, constrained ring ED | The inversion-odd gap closes for ε ≤ 0.2, is critical near 0.3 (N·gap ≈ 0.72), and saturates for ε ≥ 0.4. The PDW ground states have T₂ = ±1 and are both I_s-even. |
 | Z₃ control, R_b/a = 2.7, Δ = 5, N = 24 | Threefold degeneracy exact at ε = 0, 0.3 and 0.6 |
 | Bulk melting at Δ = 2.5, g = 11.39 | ε_c ≈ 0.53–0.55 (the earlier estimate of 0.6 was wrong) |

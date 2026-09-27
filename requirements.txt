@@ -1,0 +1,9 @@
+# Core package rydberg_chain/ and its tests (Python 3.11+).
+# The historical study in study/ keeps its own pinned study/requirements.txt.
+numpy==2.4.6
+scipy==1.17.1
+matplotlib==3.11.2
+physics-tenpy==1.1.1
+pytest==9.1.1
+# Optional: independent Qiskit cross-checks used by study/ code.
+# qiskit==2.5.2
