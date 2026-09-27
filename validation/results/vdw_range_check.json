@@ -1,0 +1,110 @@
+{
+ "script": "validation/vdw_range_check.py",
+ "python": "3.11.15",
+ "g": 11.39,
+ "sizes": [
+  33,
+  49
+ ],
+ "deltas": [
+  1.06,
+  1.07,
+  1.08,
+  1.09,
+  1.1
+ ],
+ "rmax_stored": 4,
+ "rmax": 8,
+ "crossing_stored": 1.0784610027291897,
+ "crossing": 1.0779661100807962,
+ "shift": -0.0004948926483934191,
+ "all_converged": true,
+ "max_sweeps_used": 8,
+ "scans": {
+  "33": [
+   {
+    "Delta": 1.06,
+    "E": -19.89409327804718,
+    "m_c": 0.5682329581547138,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.07,
+    "E": -20.021570967869014,
+    "m_c": 0.5879087113670565,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.08,
+    "E": -20.1498362462004,
+    "m_c": 0.6061092228823625,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.09,
+    "E": -20.278867719409128,
+    "m_c": 0.6228970755214369,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.1,
+    "E": -20.408643685049555,
+    "m_c": 0.6383563646748602,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   }
+  ],
+  "49": [
+   {
+    "Delta": 1.06,
+    "E": -29.225735014642538,
+    "m_c": 0.5238522251843558,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.07,
+    "E": -29.411591370887326,
+    "m_c": 0.5526670408132245,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.08,
+    "E": -29.59873028383194,
+    "m_c": 0.5784986562543333,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.09,
+    "E": -29.787109849488917,
+    "m_c": 0.6014954622672937,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   },
+   {
+    "Delta": 1.1,
+    "E": -29.976686769365543,
+    "m_c": 0.6219031425567829,
+    "n_sweeps": 8,
+    "converged": true,
+    "max_chi": 64
+   }
+  ]
+ },
+ "seconds": 88.72421932220459
+}

@@ -28,7 +28,7 @@ These hypotheses rest on pilot calculations; the production computations and the
 
 ![Interaction-range truncation error versus chain length](paper/figures/fig04_cutoff_error_vs_N.png)
 
-Keeping only nearest-neighbour interactions shifts the ground-state density of a uniform open chain by up to 8.1 percentage points at N ≤ 12; at g = 8 and 16 the error is still growing at N = 12. With second neighbours the shift stays below 0.19 points. The dimerized-chain calculations therefore keep the long-range tail. Details: [`paper/figures/FIGURES.md`](paper/figures/FIGURES.md).
+Keeping only nearest-neighbour interactions shifts the ground-state density of a uniform open chain by up to 8.1 percentage points at N ≤ 12 (N = 11); odd chains exceed their even neighbours, and at g = 8 and 16 the error still grows with N within each parity up to N = 12. With second neighbours the shift stays below 0.19 points. The dimerized-chain calculations therefore keep the long-range tail. Details: [`paper/figures/FIGURES.md`](paper/figures/FIGURES.md).
 
 ## Install and test
 

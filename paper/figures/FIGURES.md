@@ -141,7 +141,7 @@ Files: `paper/figures/fig07_solver_scaling.png`, `paper/figures/fig07_solver_sca
 
 Source data:
 
-- `validation/results/scaling_benchmark.json` (sha256 `0e43a99a0fea`)
+- `validation/results/scaling_benchmark.json` (sha256 `2e04f374f6bc`)
 
 Parameters:
 
@@ -153,4 +153,4 @@ Parameters:
 
 Draft caption:
 
-> Cost of exact diagonalization (ED) and pair-site DMRG for an open dimerized chain at ε = 0.3, g = 11.39 (R_b/a = 1.50) and Δ/Ω = 2.5. (a) Wall time, (b) peak resident memory and (c) DMRG energy variance; open symbols mark DMRG runs stopped at the 30-sweep limit before meeting the entropy criterion. At N = 20, DMRG reproduces the ED ground-state energy to 4.2 × 10⁻¹³ with all couplings and to 2.4 × 10⁻⁷ with inter-pair couplings cut beyond 8 pairs, and LOBPCG matches the two lowest eigsh energies to 1.1 × 10⁻¹² with a solve 4.0 to 6.7 times faster. The N = 50 run met the energy criterion but not the entropy criterion (variance 3.7 × 10⁻⁹); the N = 100 and 200 runs are not converged ground states (variance 1.9 × 10⁻⁴ and 4.3 × 10⁻⁴) and give only the cost per sweep, because the even open chain holds one delocalized domain wall that DMRG moves slowly. Times come from a shared 4-core machine (load average up to 9) and are upper bounds.
+> Cost of exact diagonalization (ED) and pair-site DMRG for an open dimerized chain at ε = 0.3, g = 11.39 (R_b/a = 1.50) and Δ/Ω = 2.5. (a) Wall time, (b) peak resident memory and (c) DMRG energy variance; open symbols mark DMRG runs stopped at the 30-sweep limit before meeting the convergence criteria. At N = 20, DMRG reproduces the ED ground-state energy to 4.2 × 10⁻¹³ with all couplings and to 2.4 × 10⁻⁷ with inter-pair couplings cut beyond 8 pairs, and LOBPCG matches the two lowest eigsh energies to 1.1 × 10⁻¹² with a solve 4.0 to 6.7 times faster. The N = 50 run is close to converged but met neither criterion (last-sweep energy change 1.6 × 10⁻⁹, variance 3.7 × 10⁻⁹); the N = 100 and 200 runs are not converged ground states (variance 1.9 × 10⁻⁴ and 4.3 × 10⁻⁴) and give only the cost per sweep, because the even open chain holds one delocalized domain wall that DMRG moves slowly. Times come from a shared 4-core machine (load average up to 9) and are upper bounds.

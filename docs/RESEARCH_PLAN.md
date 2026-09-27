@@ -62,8 +62,8 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 | P3 | Z₂ line Δ_c(ε), gap ratio R, and c from E₀(N) at g ∈ {4.83, 11.39, 40} | Backbone boundary and universality | 2 Oct |
 | P4 | Effective theory for both lines: leading order, dressed, and second-order Schrieffer–Wolff; classical Ω → 0 skeleton; BEG K/J table | Quantitative theory and validity map; classical TCI criterion | 3 Oct |
 | P5 | Z₃ control: N = 24, 30, 36; ε from 0 to 0.7 | Odd-period protection | 3 Oct |
-| P6 | Infinite/finite DMRG repair, validated against ring ED (−1.2284 per atom at ε = 0.55, Δ = 2.5, g = 11.39) | Whether DMRG can be used for large systems | 4 Oct |
-| P7 | Large-system confirmation: DMRG with odd numbers of pairs or pinned ends; Calabrese–Cardy central charge; Z₂ line and two Z₄ cuts | c = 1/2 at hundreds of atoms (the professor's "larger systems" comment) | 6 Oct |
+| P6 | ~~Infinite/finite DMRG repair~~ **Done 27 Sept.** Infinite DMRG passes its gate at 18 of 18 points (≤ 3.4 × 10⁻¹⁰ per atom against pinned 100/200-atom chains; ε = 0.55 critical, four-size fit). Bulk order curve at R_b/a = 1.5, Δ = 2.5 is in the draft. Fixes: Lanczos stopping rule, svd_min = 10⁻⁸, variational three-state pair basis at large V_s. See [IDMRG_NOTES.md](../validation/IDMRG_NOTES.md) | DMRG usable for large systems | done |
+| P7 | Large-system confirmation: pinned open chains (last atom detuned by −2Δ; converge in 7–15 sweeps at 100–200 atoms) or odd chains; Calabrese–Cardy central charge on the Z₂ line and two Z₄ cuts. An odd number of pairs removes only the PDW wall, not the τ wall | c = 1/2 at hundreds of atoms (the professor's "larger systems" comment) | 6 Oct |
 | P8 | Boundary-wall subsection (reuse the N = 12/16 data; add N = 20) | Methods warning; explains the earlier N = 8 finding | 5 Oct |
 | P9 | Hardware table in lab units (QuEra Aquila, 4 µm minimum spacing) | Which predictions current hardware can test | 5 Oct |
 
@@ -86,9 +86,25 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 | Results: alternating coupling constants | The even/odd rule, the PDW phase, the Z₂ line and the effective theory, and the negative TCI test |
 | Results: system size | ED cost versus DMRG; symmetry-resolved ED to N ≈ 40; DMRG to hundreds of atoms; even-chain boundary wall; interaction-cutoff errors |
 
-## 5. Existing-material fixes (status)
+## 5. Existing-material fixes (status, 27 September)
 
-The historical `study/` package is frozen and checksum-verified. The new maintained code is in `rydberg_chain/` with `tests/` and `validation/`. The status of the eleven fixes listed on 26 September is tracked in [VALIDATION.md](VALIDATION.md) and the commit history.
+The historical `study/` package is frozen and checksum-verified. New code lives in `rydberg_chain/`, with `tests/` (66 tests) and `validation/`.
+
+| Item | Status |
+|---|---|
+| 1. Infinite DMRG | Fixed and validated (P6 above) |
+| 2. External benchmark | Blockaded-chain Z₂ point Δ_c/Ω = 0.65515 ± 0.00016 against the published 0.655, with c = 0.50 ± 0.01. Critical Ising chain exact to 10⁻¹³. Full vdW chain at R_b/a = 1.5: 1.0794 (open DMRG) against 1.0785 (ring ED) ([BENCHMARK_NOTES.md](../validation/BENCHMARK_NOTES.md)); the literature value still needs a full-text check |
+| 3. ED speed | Vectorized builder, identical to the study Hamiltonian; N = 20 in 55 s with LOBPCG |
+| 4. Consolidation and tests | `rydberg_chain/` package with pytest suite |
+| 5. Requirements | Minimal root `requirements.txt`; study pins unchanged |
+| 6. Notation | [NOTATION.md](NOTATION.md) |
+| 7. Figures | Seven publication figures in `paper/figures/`, regenerated from saved data |
+| 8. Docs tone | README and docs rewritten |
+| 9. Cutoff study | Reframed as the reason all tails are kept |
+| 10. Defect label | Labelled as an idealised interaction switch-off control |
+| 11. Kagome | Marked as an exploratory appendix |
+
+**Manuscript draft:** `paper/DRAFT.md` and `paper/DRAFT.docx` (see `paper/README.md`).
 
 ## 6. Ownership and disclosure
 

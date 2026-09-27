@@ -4,7 +4,7 @@ What has been checked, how, and with what observed error. Status as of 27 Septem
 
 ## Maintained package (`rydberg_chain/`)
 
-Run `python -m pytest` from the repository root with `OMP_NUM_THREADS=2` (see [README](../README.md)). The 43 tests of the core modules (`test_geometry_ed.py`, `test_effective.py`, `test_dmrg.py`) passed in 43 s on 27 September. `test_infinite.py` and `test_benchmark_smoke.py` cover the infinite-DMRG module and the benchmark references.
+Run `python -m pytest` from the repository root with `OMP_NUM_THREADS=2` (see [README](../README.md)). The 43 tests of the core modules (`test_geometry_ed.py`, `test_effective.py`, `test_dmrg.py`) passed in 43 s on 27 September. `test_infinite.py` (13 tests) and `test_benchmark_smoke.py` (10 tests) cover the infinite-DMRG module and the benchmark references; the full suite of 66 tests passes.
 
 | Check | Observed agreement |
 |---|---|
@@ -23,12 +23,12 @@ Run `python -m pytest` from the repository root with `OMP_NUM_THREADS=2` (see [R
 
 - ED with `eigsh` at N = 16, 18, 20: 6.6, 40 and 362 s; peak memory 0.11–0.56 GB. LOBPCG: 1.8, 8.7 and 55 s, with the two lowest energies equal to the `eigsh` values within 1.1 × 10⁻¹².
 - Pair-site DMRG (χ = 64) at N = 20 reproduces the ED ground-state energy to 4 × 10⁻¹³ with all couplings; keeping couplings up to eight pair separations shifts it by −2.4 × 10⁻⁷.
-- At N = 50 DMRG meets the energy criterion (variance 3.7 × 10⁻⁹) but not the entropy criterion within 30 sweeps. The N = 100 and 200 runs are not converged ground states (variance 1.9 × 10⁻⁴ and 4.3 × 10⁻⁴) and give only the cost per sweep (24 and 33 s). The slow mode is the delocalized domain wall of the even open chain.
+- At N = 50 DMRG is close to converged but meets neither criterion within 30 sweeps (last-sweep energy change 1.6 × 10⁻⁹, variance 3.7 × 10⁻⁹). The N = 100 and 200 runs are not converged ground states (variance 1.9 × 10⁻⁴ and 4.3 × 10⁻⁴) and give only the cost per sweep (24 and 33 s). The slow mode is the delocalized domain wall of the even open chain.
 - The machine was shared with other jobs (load average up to 9); times are upper bounds and vary by about a factor of two.
 
 **External benchmarks** (`benchmark_uniform.py`, [notes](../validation/BENCHMARK_NOTES.md)): the critical open transverse-field Ising chain against its exact free-fermion solution, and the ℤ₂ transition of the nearest-neighbour-blockaded chain against the published value.
 
-**Infinite DMRG gate** (`idmrg_validation.py`): energy per atom within 10⁻⁶ of the bulk estimate from pinned open chains of 100 and 200 atoms, with consistent order parameters. Results are written to `results/idmrg_validation.json`.
+**Infinite DMRG gate** (`idmrg_validation.py`, [notes](../validation/IDMRG_NOTES.md)): energy per atom within 10⁻⁶ of the bulk estimate from pinned open chains of 100 and 200 atoms, with consistent order parameters. All 18 points pass (`results/idmrg_validation.json`): 17 on the two-size estimate, with differences ≤ 3.4 × 10⁻¹⁰ per atom, and the near-critical point ε = 0.55 (g = 11.39, Δ/Ω = 2.5, ξ ≈ 127a) only on a four-size fit (N = 100–800), at −4.1 × 10⁻⁷. Points with ε ≥ 0.45 at this g and Δ use the variational three-state pair basis (error ≤ 1.6 × 10⁻⁹ per atom against 10-atom ED).
 
 ## Publication figures (`paper/make_figures.py`)
 

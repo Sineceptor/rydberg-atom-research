@@ -30,9 +30,10 @@ NOTES = ("Each case runs in a separate subprocess; peak_rss_GB is that process's
          "DMRG: pair_chain_ground_state with package defaults (two-site, chi=64, mixer for up to 10 "
          "sweeps, max_E_err=1e-12, max_S_err=1e-8) but max_sweeps=30, started from "
          "default_product_state (one central 00 wall); seconds include MPO construction and the "
-         "variance evaluation. 'converged' is False when the entropy criterion was not met within "
-         "max_sweeps; the slow mode is the delocalized domain wall of the even open chain, and the "
-         "energy variance shows the energy is converged regardless.")
+         "variance evaluation. 'converged' is False when the energy or the entropy criterion was not met "
+         "within max_sweeps; the slow mode is the delocalized domain wall of the even open chain. "
+         "Such runs are not converged ground states unless last_sweep_dE and the variance are "
+         "small; they always give the cost per sweep.")
 
 
 def peak_gb():

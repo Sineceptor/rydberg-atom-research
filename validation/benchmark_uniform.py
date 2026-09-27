@@ -26,7 +26,8 @@ neighbours), compared with the preliminary ring-ED value of the pilot study.
 Run from the repository root (each worker is single-threaded):
     python validation/benchmark_uniform.py [--quick] [--workers 2] [--parts tfim,blockade,vdw]
     python validation/benchmark_uniform.py --reanalyse    # refit from the stored raw data
-Results go to validation/results/benchmark_uniform.json; see BENCHMARK_NOTES.md.
+Results go to validation/results/benchmark_uniform.json (--quick: benchmark_uniform_quick.json,
+so a smoke run never overwrites the full results); see BENCHMARK_NOTES.md.
 """
 
 import argparse
@@ -47,6 +48,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 RESULTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results",
                        "benchmark_uniform.json")
+QUICK_RESULTS = RESULTS.replace(".json", "_quick.json")   # --quick never overwrites RESULTS
 LITERATURE = {
     "model": "hard-boson chain, H = sum_j [-w (d_j + d_j^dag) + U n_j], n_j n_{j+1} = 0",
     "U_c_over_w": -1.31,
@@ -483,10 +485,14 @@ def main(argv=None):
                              "already in --out are kept")
     parser.add_argument("--workers", type=int, default=2,
                         help="parallel DMRG processes (each single-threaded by default)")
-    parser.add_argument("--out", default=RESULTS)
+    parser.add_argument("--out", default=None,
+                        help="results file (default: results/benchmark_uniform.json, or "
+                             "results/benchmark_uniform_quick.json with --quick)")
     parser.add_argument("--reanalyse", action="store_true",
                         help="recompute the fits of --parts from the raw data stored in --out")
     args = parser.parse_args(argv)
+    if args.out is None:
+        args.out = QUICK_RESULTS if args.quick else RESULTS
     cfg = _settings(args.quick)
     parts = [p.strip() for p in args.parts.split(",") if p.strip()]
     t_start = time.time()

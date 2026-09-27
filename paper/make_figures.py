@@ -536,17 +536,20 @@ def solver_scaling(out):
     unconv = [r for r in dm if not r["converged"]]
     n50, big = unconv[0], unconv[1:]
     assert n50["n_atoms"] == 50 and n50["variance"] < 1e-8 and len(big) == 2
+    E_err = 1e-12                      # max_E_err of the DMRG defaults used by the benchmark
+    assert n50["last_sweep_dE"] > E_err, "caption says the N = 50 run missed the energy criterion"
     caption = (
         f"Cost of exact diagonalization (ED) and pair-site DMRG for an open dimerized chain at "
         f"ε = {p['eps']}, g = {p['g']} (R_b/a = {rb(p['g']):.2f}) and Δ/Ω = {p['delta']}. "
         "(a) Wall time, (b) peak resident memory and (c) DMRG energy variance; open symbols mark DMRG runs "
-        f"stopped at the {p['dmrg_max_sweeps']}-sweep limit before meeting the entropy criterion. "
+        f"stopped at the {p['dmrg_max_sweeps']}-sweep limit before meeting the convergence criteria. "
         f"At N = 20, DMRG reproduces the ED ground-state energy to {sci(abs(full20['E0_minus_ED']))} with all "
         f"couplings and to {sci(abs(shift))} with inter-pair couplings cut beyond 8 pairs, and LOBPCG matches "
         f"the two lowest eigsh energies to {sci(agree)} with a solve {min(speed):.1f} to {max(speed):.1f} times "
         "faster. "
-        f"The N = {n50['n_atoms']} run met the energy criterion but not the entropy criterion (variance "
-        f"{sci(n50['variance'])}); the N = {big[0]['n_atoms']} and {big[1]['n_atoms']} runs are not converged "
+        f"The N = {n50['n_atoms']} run is close to converged but met neither criterion (last-sweep energy change "
+        f"{sci(n50['last_sweep_dE'])}, variance {sci(n50['variance'])}); the N = {big[0]['n_atoms']} and "
+        f"{big[1]['n_atoms']} runs are not converged "
         f"ground states (variance {sci(big[0]['variance'])} and {sci(big[1]['variance'])}) and give only the "
         "cost per sweep, because the even open chain holds one delocalized domain wall that DMRG moves slowly. "
         "Times come from a shared 4-core machine (load average up to 9) and are upper bounds.")

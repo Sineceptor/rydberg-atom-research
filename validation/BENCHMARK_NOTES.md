@@ -6,7 +6,7 @@ Run it from the repository root:
 
 ```
 python validation/benchmark_uniform.py --workers 2      # all parts, about 17 min on 2 cores
-python validation/benchmark_uniform.py --quick          # sizes 16-25, about 2 min
+python validation/benchmark_uniform.py --quick          # sizes 16-25, about 2 min; writes results/benchmark_uniform_quick.json
 python validation/benchmark_uniform.py --reanalyse      # refit from the raw data in the JSON
 ```
 
@@ -151,7 +151,7 @@ The two agree to the three digits published. The quoted uncertainty is the sprea
 The same estimator was applied to the full model with g = 11.39 (V₁ = 11.39, V₂ = 0.178, …), with couplings kept up to fourth neighbours.
 - **Crossings.** The crossings are 1.07846 for (33, 49) and 1.07893 for (49, 65).
 - **Extrapolation.** With p = 1.5–2.5 this gives Δ_c = 1.0794 ± 0.0002, where the uncertainty is the fit spread only; p = 1 gives 1.0801.
-- **Truncation of the couplings.** Dropping V₆ = g/6⁶ = 2.4e-4 and all longer couplings (the even distances penalise the Z2 crystal) lowers Δ_c by about 2e-4, so the untruncated chain should sit near 1.0796.
+- **Truncation of the couplings.** The cutoff drops V₅ = g/5⁶ = 7.3e-4, V₆ = g/6⁶ = 2.4e-4 and all longer couplings. Odd distances penalise the disordered phase more than the Z2 crystal and even distances the reverse, so the two partly cancel. `validation/vdw_range_check.py` recomputes the (33, 49) crossing with couplings to eighth neighbours (`results/vdw_range_check.json`): it moves from 1.07846 to 1.07797, a shift of −4.9e-4 in which the larger V₅ dominates. If the shift is similar at larger sizes, the untruncated chain sits near 1.0789, i.e. 4e-4 from the pilot ring-ED value.
 - **Comparison with the pilot.** The preliminary ring-ED value of the pilot (8/10-pair rings, 16/20 atoms) is Δ_c = 1.0785. The two methods have different boundary conditions and sizes and agree to about 1e-3. The ε = 0 entry of the pilot table is therefore confirmed at that level.
 - **Central charge.** At N = 65 and Δ = 1.08, c_smooth = 0.472. The central-entropy estimate is 0.482 from (33, 49) and 0.483 from (49, 65). The values are close to the blockade-model ones at the same sizes, consistent with Ising.
 - **Status.** This is an internal consistency check, not a literature comparison.
