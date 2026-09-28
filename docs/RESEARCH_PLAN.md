@@ -1,11 +1,11 @@
-# Research plan to 15 October 2026 (revised 27 September)
+# Research plan to 15 October 2026 (revised 27 September; literature gate completed 28 September)
 
 This revision replaces the 26 September draft. An adversarial literature review and new pilot calculations changed the headline. The direction must be confirmed with Prof. Rubenstein before production runs.
 
 ## 1. Why the plan changed
 
 - **Zeybek, Mukherjee & Schmelcher** (PRL 131, 203003 (2023); arXiv:2303.17470), read in full. Their model uses two Rydberg levels, dipolar hopping, fixed particle number and the laser off. In that dimerized chain they already find a density-wave → bond-order transition at half filling. "Dimerization melts the Z2 crystal into shared pairs" is therefore not a new idea, although our laser-driven, single-level model is a different system.
-- **Tricritical Ising (TCI)** has already been measured in a uniform single-species vdW chain (Sun et al., arXiv:2601.16275, Nature 2026, using an inverted sweep). Pilot exact diagonalization also finds only Ising behaviour along the dimerized Z2 line: gap ratios 7.87–8.15 against the Ising value 8. There is also a classical-limit reason. Tricriticality needs a net attraction V₂ < 0 between aligned occupied pairs. Aligned pairs always sit 2a apart, so dimerization cannot supply it. TCI is therefore a pre-registered negative test, not the headline.
+- **Tricritical Ising (TCI)** has already been measured in a uniform single-species vdW chain (Sun et al., arXiv:2601.16275, read in full 28 Sept; journal version unconfirmed). That experiment needed an inverted sweep, which prepares the highest-energy state of the blockaded chain, to obtain an effective V₂ < 0. Pilot exact diagonalization also finds only Ising behaviour along the dimerized Z2 line: gap ratios 7.87–8.15 against the Ising value 8. There is also a classical-limit reason. Tricriticality needs a net attraction V₂ < 0 between aligned occupied pairs. Aligned pairs always sit 2a apart, so dimerization cannot supply it. TCI is therefore a negative test, not the headline.
 - **The single boundary domain wall** in even open chains is textbook kink-in-a-box physics. It becomes a methods/system-size subsection.
 - **Degenerate-packing selection** is trivial here: the unit-disk graph is disjoint edges, and the vdW tails lift the degeneracy at first order. At most one motivating sentence.
 
@@ -40,17 +40,23 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 | Z₃ control, R_b/a = 2.7, Δ = 5, N = 24 | Threefold degeneracy exact at ε = 0, 0.3 and 0.6 |
 | Bulk melting at Δ = 2.5, g = 11.39 | ε_c ≈ 0.53–0.55 (the earlier estimate of 0.6 was wrong) |
 
-**Novelty status.** Two independent searches found no study of a spacing-dimerized, single-level vdW chain, and none of its Z₃/Z₄ regimes. The web search was incomplete (arXiv full text was unreachable).
+**Novelty status (28 Sept).** Two independent searches found no study of a spacing-dimerized, single-level vdW chain, and none of its Z₃/Z₄ regimes. All eight papers on the must-read list have now been read in full, and none studies this chain. The closest relative of the PDW is the rung-resonant crystal of two-leg ladders (arXiv:2411.05494, 2412.11201), so the paper must present the PDW as the dimerized-chain counterpart of those crystals, not as a new kind of phase. What remains new:
+- the realization in a single-species, single-level chain by geometry alone;
+- the Ashkin–Teller reading: dimerization is an anisotropy between two Ising order parameters, linear in ε, vanishing at the uniform chain;
+- the even/odd rule, with the Z₃ crystal protected;
+- the pseudo-spin theory and the quantitative Z₂ line.
+
+The web search itself was incomplete (arXiv full text was unreachable), so a paper outside the local archive could still have been missed.
 
 **Must read before committing (gate P0, by 29 Sept):**
 - ~~Chepiga, arXiv:2308.12838 (PRL 132, 076505)~~ read 27 Sept
 - ~~arXiv:2408.15965 (alternating-species chain)~~ read 27 Sept
-- arXiv:2412.11201 and 2411.05494 (ladders)
-- arXiv:2406.20093
-- arXiv:2403.06649
-- arXiv:2601.16275 and 2506.21963
+- ~~arXiv:2412.11201 and 2411.05494 (ladders)~~ read 28 Sept
+- ~~arXiv:2406.20093~~ read 28 Sept
+- ~~arXiv:2403.06649~~ read 28 Sept
+- ~~arXiv:2601.16275 and 2506.21963~~ read 28 Sept
 
-**P0 findings so far (27 September):**
+**P0 findings (27–28 September):**
 - **Chepiga, arXiv:2308.12838.**
   - *System:* a uniform chain in which each atom can reach two Rydberg levels, studied as a blockade model with DMRG up to 907 sites.
   - *Result:* the period-4 phase is reached from the disordered phase through an intermediate period-2 phase and two Ising transitions. The two lines merge at an Ashkin–Teller point, followed by chiral transitions or floating phases. The ratio of the two Rabi frequencies tunes this structure.
@@ -59,6 +65,28 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
   - *System:* alternating A–B atomic species at uniform spacing, with attractive interspecies interactions.
   - *Result:* period-4 |1100…⟩ and period-6 |111000…⟩ product states, plus quantum many-body scars.
   - *Consequence for us:* no overlap with geometric dimerization, the shared-excitation pair phase, or Z₄ splitting.
+- **Soto Garcia & Chepiga, arXiv:2411.05494 (square two-leg vdW ladder).**
+  - *Result:* every crystal except the checkerboard appears twice. In one version each occupied rung shares its excitation between the legs (Z_k); in the other the leg symmetry is broken (Z_k ⊗ Z̃₂). The two are separated by an Ising transition. For k = 2 the two Ising lines fuse into an extended Ashkin–Teller interval, then a Z₄-chiral transition, then a floating phase. The same doubling appears for k = 3 and k = 4. The authors suggest tuning the ladder's aspect ratio as a further control knob.
+  - *Consequence for us:* this is the closest relative of the PDW (their Z₂ phase ↔ our PDW; their Z₂ ⊗ Z̃₂ ↔ our Z₄ crystal). It must be cited as the ladder counterpart. Our differences: the L/R exchange is a spatial inversion, not an internal leg swap (so the odd couplings B_m and the boundary fields exist); ε connects continuously to the uniform chain; and the Z₃ crystal cannot split (it straddles pairs). Their diagnostics (order-parameter scaling dimension, Calabrese–Cardy with Friedel oscillations removed, Ornstein–Zernike fits, Δq·ξ) suit P2 and P7.
+- **Liao, Zhang & Yang, arXiv:2412.11201 (rectangular ladder, rungs half the leg spacing).**
+  - *Result:* leg-symmetric Z_p⁺ phases with rung bond order (p = 2, 3, 4), then Ising transitions into leg-broken phases. These are staggered (period 2p) because opposite-leg atoms on different rungs are farther apart. The paper also covers Potts and Ashkin–Teller points, chiral transitions and two kinds of floating phase.
+  - *Consequence for us:* same family as above. In our chain J_m > 0, so τ orders uniformly and the τ-ordered state is the Z₄ crystal itself.
+- **La Rivière & Chepiga, arXiv:2406.20093 (quantum loop model on a zig-zag ladder).**
+  - *Result:* a Z₄ phase melts through two Ising transitions with an intermediate Z₂ phase. The lines merge at an Ashkin–Teller point, followed by an extended chiral transition. Depending on t′ there is instead a floating phase or a first-order transition.
+  - *Consequence for us:* another model with the two-Ising route. It is not a Rydberg geometry, although special cases map onto multicomponent Rydberg chains.
+- **Zeybek, Schmelcher & Mukherjee, arXiv:2403.06649 (dimerized extended Bose–Hubbard model).**
+  - *Result:* hard-core bosons with dimerized hopping, fixed filling and U(1) symmetry. They find bond-order density waves at ρ = 1/4 (one boson shared on every other dimer, which is the number-conserving analogue of our PDW) and ρ = 1/3 (a six-site unit cell), and analyse their topology.
+  - *Consequence for us:* no laser drive and no transitions studied. Cite it as the number-conserving counterpart, as the draft already does.
+- **Sun et al., arXiv:2601.16275 (experimental CFT spectra).**
+  - *Result:* Ising and tricritical Ising spectra were measured in a uniform chain. The tricritical point needed an inverted ("backward") sweep for an effective V₂ < 0. The experiment also resolved reflection parity with local control.
+  - *Consequence for us:* supports the negative TCI result. Reflection-parity spectroscopy is a natural probe of our I_s-odd gap (added to the draft's Outlook).
+- **Naus et al., arXiv:2506.21963 (measurement-altered criticality).**
+  - *Result:* Ising and tricritical Ising chains under projective measurement of a periodic subset of atoms.
+  - *Consequence for us:* no overlap; a possible future-work citation only.
+- **Ashkin–Teller reading (derived 28 Sept, docs/DIMERIZED_THEORY.md §4).**
+  - The four period-4 patterns are two Ising variables σ₁, σ₂, with u = σ₂ and τ = σ₁σ₂. T₂ flips both, and I_s flips σ₁.
+  - Translation by one atom exchanges them and maps ε → −ε. Dimerization is therefore an Ashkin–Teller anisotropy, linear in ε, which is why the Z₄ transition splits.
+  - This needs a standard citation for the anisotropic Ashkin–Teller model [verify], and Ethan should re-derive it.
 
 **Not to be claimed:** "first", "simplest route to TCI", "emergent supersymmetry", a new phase for the shared-pair disordered regime, "exact for hundreds of atoms".
 
@@ -66,7 +94,7 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 
 | Priority | Computation | Decides | Due |
 |---|---|---|---|
-| P0 | Literature gate. **Partly done 27 Sept:** Chepiga (arXiv:2308.12838, PRL 132, 076505) and arXiv:2408.15965 were read in full; neither studies the spacing-dimerized single-level chain (details in Sec. 2). Still to read: arXiv:2412.11201, 2411.05494, 2406.20093, 2403.06649, 2601.16275, 2506.21963 | Whether the Z₄/PDW split is already published | 29 Sept |
+| P0 | ~~Literature gate~~ **Done 28 Sept.** All eight must-read papers read in full; none studies the spacing-dimerized single-level chain. The PDW's closest relative is the rung-resonant crystal of two-leg ladders; its framing is now set (Sec. 2, P0 findings) | Whether the Z₄/PDW split is already published: **no, but it must be framed as the chain counterpart of the ladder crystals** | done |
 | P1 | Validate the constrained basis against full ED (N = 16, 20; periodic and open; R_b/a = 3.3; ε ∈ {0, 0.3, 0.5}; Δ ∈ {2, 3, 5}) | Go/no-go for the headline | 29 Sept |
 | P2 | Z₄/PDW gap map: constrained periodic ED, N = 16–36 on a 12×8 (Δ, ε) grid, N = 40 on three cuts. Count degeneracies using T₂ and I_s quantum numbers; locate N·gap crossings | Extent of the PDW and its phase boundaries | 2 Oct |
 | P3 | Z₂ line Δ_c(ε), gap ratio R, and c from E₀(N) at g ∈ {4.83, 11.39, 40} | Backbone boundary and universality | 2 Oct |
@@ -78,13 +106,13 @@ $$J_m(\varepsilon)=\tfrac14\left[V(2ma-s)+V(2ma+s)-2V(2ma)\right],$$
 | P9 | Hardware table in lab units (QuEra Aquila, 4 µm minimum spacing) | Which predictions current hardware can test | 5 Oct |
 
 **Gates:**
-- 29 Sept: P0 and P1 pass.
+- 29 Sept: P0 (passed 28 Sept, with the ladder framing) and P1 pass.
 - 2 Oct: P2 shows the predicted degeneracy counts beyond 12 pairs.
 - 6 Oct: numerics frozen.
 - 6–13 Oct: figures and manuscript.
 - 13–15 Oct: self-audit, with every quoted number recomputed, then send to the professor.
 
-**Fallback.** If P0 finds the Z₄ split published, or P1/P2 show the PDW is an artefact of the restricted basis, the paper becomes the Z₂ backbone plus the negative TCI result plus the boundary wall. Working title: *Dimerized Rydberg chains as quantum order–disorder ferroelectrics: pseudo-spin theory, phase boundary, and why geometry alone does not make them tricritical.* That is still an unstudied model with a validated quantitative theory, and most of it is already in hand.
+**Fallback.** P0 did not find the Z₄ split published for this chain (28 Sept). If P1/P2 show the PDW is an artefact of the restricted basis, the paper becomes the Z₂ backbone plus the negative TCI result plus the boundary wall. Working title: *Dimerized Rydberg chains as quantum order–disorder ferroelectrics: pseudo-spin theory, phase boundary, and why geometry alone does not make them tricritical.* That is still an unstudied model with a validated quantitative theory, and most of it is already in hand.
 
 ## 4. Mapping onto the paper outline
 
@@ -118,4 +146,4 @@ The historical `study/` package is frozen and checksum-verified. New code lives 
 
 ## 6. Ownership and disclosure
 
-The student derives J_m, h, the dressing, the symmetry table and the gap-ratio method himself, and reproduces the key numbers from the maintained package. AI assistance in code, pilots and drafting is disclosed, in line with the professor's and the journal's policy.
+The student derives J_m, h, the dressing, the symmetry table (including the Ashkin–Teller labelling of §4 of DIMERIZED_THEORY.md) and the gap-ratio method himself, and reproduces the key numbers from the maintained package. AI assistance in code, pilots and drafting is disclosed, in line with the professor's and the journal's policy.

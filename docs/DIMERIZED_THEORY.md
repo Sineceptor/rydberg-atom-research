@@ -67,7 +67,20 @@ The regime beyond the line, where each pair shares one excitation, is **not** a 
 
 The τ transition is governed by J₂ against h. At large ε the PDW is simply the Z₂ crystal of a chain of two-atom superatoms. It resembles the rung-symmetric Z_p⁺ phases of two-leg ladders. Here τ is reversed by a spatial inversion rather than by an internal leg exchange, and a derivative (Huse–Fisher chiral) coupling between u and the I_s-odd components of the order parameter is symmetry-allowed near ε = 0. Chiral transitions are also reported in ladders, so this is a difference in mechanism, not a claim that ladders forbid chirality.
 
-**Z₃ regime (R_b/a ≈ 2.7).** T₂ still cycles the three period-3 patterns and I_s exchanges two of them, so D₃ survives. Dimerization should add no new transition, only non-universal shifts.
+**Ashkin–Teller view (added 28 September; re-derive by hand).** Label the four patterns by k = 0…3, the position of the excitation modulo 4, and write them as two Ising variables: (σ₁, σ₂) = (+,+), (−,+), (−,−), (+,−) for k = 0, 1, 2, 3. Then u = σ₂ and τ = σ₁σ₂.
+- Translation by one atom, T₁ (a symmetry only at ε = 0), maps (σ₁, σ₂) → (−σ₂, σ₁). It exchanges the two Ising copies, which is why they order together in the uniform chain.
+- T₂ flips both variables, and I_s (k → 1 − k) flips σ₁ alone. After dimerization these two flips are separate symmetries, and no remaining operation exchanges σ₁ with σ₂.
+- T₁ also maps ε → −ε. An anisotropy λ(ε)(ε₁ − ε₂) between the two Ising energy operators is therefore allowed, with λ odd in ε: dimerization enters at first order. A term in τ = σ₁σ₂ itself is forbidden, because I_s flips it.
+- An anisotropic Ashkin–Teller model generically melts through two Ising transitions, with an intermediate phase in which only one variable orders. The PDW is σ₂ ordered and σ₁ disordered, so ⟨τ⟩ = 0. The alternative, σ₁ ordered alone, would be a PDW centred on the weak bonds. The pilot spectra (both states I_s-even, T₂ = ±1) point to the strong-bond PDW for ε > 0.
+- Other models follow the same two-Ising route out of a Z₄ phase, with the two lines merging at an Ashkin–Teller point: multicomponent chains (arXiv:2308.12838), quantum loop models on a zig-zag ladder (arXiv:2406.20093) and two-leg ladders (arXiv:2411.05494, 2412.11201). What is specific here is that the anisotropy comes from geometry, is linear in ε, and vanishes at the uniform chain.
+- A standard reference for the anisotropic Ashkin–Teller model must be found and cited [verify].
+
+**Comparison with the ladder crystals (full texts read 28 September).**
+- *Square ladder (arXiv:2411.05494).* Every crystal except the checkerboard appears twice. In one version each occupied rung shares its excitation between the legs; in the other the leg symmetry is broken. An Ising transition separates the two, and the two Ising lines fuse into an extended Ashkin–Teller interval, followed by a Z₄-chiral transition and a floating phase.
+- *Rectangular ladder, rungs half the leg spacing (arXiv:2412.11201).* The leg-symmetric Z_p⁺ crystals give way through Ising transitions to leg-broken crystals that are staggered, which doubles the period to 2p. They are staggered because atoms on opposite legs of neighbouring occupied rungs are farther apart than atoms on the same leg. Here J_m > 0, so τ orders uniformly, and the τ-ordered state is the uniform chain's Z₄ crystal.
+- *In the ladders the leg swap is an internal symmetry.* It forbids the odd couplings B_m of section 2. Here they are allowed, and they produce the boundary fields and the forced domain wall in even open chains.
+
+**Z₃ regime (R_b/a ≈ 2.7).** T₂ still cycles the three period-3 patterns and I_s exchanges two of them, so D₃ survives. Dimerization should add no new transition, only non-universal shifts. In the square ladder a period-3 crystal of rungs does split (arXiv:2411.05494), because every ladder crystal is built from whole rungs. The period-3 crystal of the dimerized chain straddles the pairs, so it cannot. A crystal with one excitation on every third pair has period 6 and falls under the even case.
 
 **Pilot evidence (constrained ring ED; must be validated against full ED, gate P1):**
 - **R_b/a = 3.3, Δ = 3.** The inversion-odd (τ-channel) gap at N = 16/24/32 is:
