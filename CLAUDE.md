@@ -5,6 +5,7 @@ Student research project: ground-state physics of Rydberg-atom chains, now focus
 ## Where things are
 
 - `docs/RESEARCH_PLAN.md`: direction, pilot evidence, literature findings and the computation list P0–P9 with due dates. Read this first.
+- `docs/NEXT_STEPS_PROMPTS.md`: ready-to-use prompts for the open tasks (orientation, P1–P9, citations, final audit).
 - `docs/DIMERIZED_THEORY.md`: pseudo-spin theory, symmetry arguments (including the Ashkin–Teller labelling of the Z₄ patterns) and corrections log.
 - `meeting_notes/`, `private/`, `private_notes/`: gitignored on purpose. Meeting briefs and personal notes live there and never enter the public repository.
 - `paper/DRAFT.md`: the master manuscript. `paper/sections/` is superseded; do not edit it. `paper/DRAFT.docx` is an export of `DRAFT.md`.
